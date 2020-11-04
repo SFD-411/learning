@@ -9,7 +9,7 @@ import(
 )
 
 func main(){
-    alpha := []rune(" ZYXWVUTSRQPONMLKJIHGFEDCBAzyxwvutsrqponmlkjihgfedcba0123456789!?/.,=-_)(*&^%$#@!~][}{';:><")
+    alpha := []rune("0 1Z2a3Y4b5X6c7W8d9V!e?U/f.T,S=h-R_i)Q(j*P&kO^lN%mM$nL#oK@pJ~qI]rH[sG}tF{uE'vD:wC;xB>yA<z")
 
     var input []rune
     var retainer []rune
@@ -25,22 +25,24 @@ func main(){
     }
 
     delta := len(input)
+    counter := 0
 
     for _, ch := range input {
-        retainer = append(retainer, cipher(ch, delta, alpha))
+        counter = counter + 1
+        retainer = append(retainer, cipher(ch, delta, alpha, counter))
     }
 
     fmt.Println(string(retainer))
 }
 
-func cipher(s rune, delta int, key []rune) rune{
+func cipher(s rune, delta int, key []rune, counter int) rune{
     index := strings.IndexRune(string(key), s)
     
     if (index < 0 && index != ' ') {
         panic("index not found")
     }
 
-    index = (index + delta) % len(key)
+    index = (index + delta) * counter % len(key)
 
     return key[index]
 }
