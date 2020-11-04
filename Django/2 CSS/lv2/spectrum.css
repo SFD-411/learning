@@ -1,0 +1,16 @@
+body{
+  text-align: center;
+  margin: 10%;
+}
+h1{  font-family: Ani; }
+table{  margin: auto; }
+td{
+  border: 3px solid white;
+  height: 300px;
+  width: 100px;
+}
+#a1{  background: #dda942; }
+#a2{  background: #89aa3f; }
+#a3{  background: #5797ce; }
+#a4{  background: #af65c5; }
+#a5{  background: #dd3c3c; }

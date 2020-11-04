@@ -1,0 +1,6 @@
+*.hi
+*.o
+dist-*
+Setup.hs
+*.cabal
+*.md

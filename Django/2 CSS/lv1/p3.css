@@ -1,0 +1,42 @@
+/* overwrites everything but IDs
+
+*{
+  property:attribute;
+}
+
+ */
+
+/* classes */
+.FirstDiv{
+  background: url(https://image.shutterstock.com/image-vector/punchy-pastel-trendy-background-holographic-260nw-1064535800.jpg);
+  background-size: cover;
+  color: white;
+}
+
+.SecondDiv{
+  background: url(https://image.shutterstock.com/image-vector/punchy-pastel-trendy-background-holographic-260nw-1064535800.jpg);
+  background-size: cover;
+  color: purple;
+}
+
+/* ids */
+#singular{
+  color: green;
+  text-decoration: overline;
+}
+
+/* adjacent siblings */
+h3 + ul{
+  border: 2px dotted blue;
+}
+
+/* descentents */
+li a{
+  color: red;
+}
+
+/* attributes */
+li a[href="http://www.github.com/soulfilleddirt"]{
+  color: yellow;
+  border: 1px solid purple;
+}

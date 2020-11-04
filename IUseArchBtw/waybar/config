@@ -1,0 +1,96 @@
+{
+    "layer": "top", // Waybar at top layer
+    //"position": "bottom", // Waybar position (top|bottom|left|right)
+     "height": 28, // Waybar height (to be removed for auto height)
+    // "width": 1000, // Waybar width
+    // Choose the order of the modules
+
+    "modules-left": ["sway/workspaces", "sway/window"],
+    "modules-center": ["clock"],
+    "modules-right": ["sway/mode", "cpu", "memory", "disk", "pulseaudio", "tray", "idle_inhibitor"],
+    // Modules configuration
+
+     "sway/workspaces": {
+         "disable-scroll": true,
+         "all-outputs": true,
+         "format": "{icon}",
+         "format-icons": {
+               "1": "♚",
+               "2": "♛",
+               "3": "♞",
+               "4": "♝",
+               "5": "♜",
+	       "6": "♟",
+	       "7": "♟",
+	       "8": "♟",
+	       "9": "♟",	
+
+             "urgent": "♱",
+             "focused": "",
+             "default": ""
+         }
+     },
+    "sway/window": {
+	"format": "  {}  ",
+        "text-align": "center",
+        "line-height": 0
+    },
+    "sway/mode": {
+        "format": "<span style=\"bold\">{}</span>"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "☼",
+            "deactivated": "☀"
+        }
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+        "tooltip-format": "{:%Y-%m-%d | %H:%M}",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "cpu": {
+        "format": "{usage}%",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "{}%"
+    },
+    "disk": {
+	"format": " {}% "
+    },
+    
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon}",  //{format_source}",
+        "format-muted": "[MUTE]",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphones": "♫",
+            "handsfree": "♫",
+            "headset": "♫",
+            "phone": "♫",
+            "portable": "♫",
+            "car": "V",
+            "default": ["♫", "♫", "♫"]
+        },
+        "on-click": "pavucontrol"
+    },
+    "custom/media": {
+        "format": "{icon} {}",
+        "return-type": "json",
+        "max-length": 40,
+        "format-icons": {
+            "spotify": "",
+            "default": "🎜"
+        },
+        "escape": true,
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    }
+}

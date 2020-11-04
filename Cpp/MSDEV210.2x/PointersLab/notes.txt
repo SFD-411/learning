@@ -1,0 +1,2 @@
+program stopps after deallocated *pDub output to console with an exit code of -1073741819.
+constructor undefined, instantiation is an undeclared identifier. missing type specifier in class declaration

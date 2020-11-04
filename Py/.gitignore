@@ -1,0 +1,6 @@
+*.pyproj
+*.sln
+*.suo
+*.db
+*.pyc
+*.ipch

@@ -1,0 +1,34 @@
+body{
+  background: teal;
+}
+h1{
+  border: 1px solid black;
+}
+h2{
+  color: purple;
+}
+p{
+  background: yellow;
+}
+h2 + p{
+  background: teal;
+}
+.classblog{
+  width: 800px;
+  height: 180px;
+  border: 2px double grey;
+}
+.classlogin{
+  background: grey;
+}
+.classfeedback{
+  background: blue;
+  border: 3px dotted white;
+}
+#firstitem{
+  color: purple;
+  text-decoration: overline;
+}
+#seconditem{
+  font-weight: bold;
+}

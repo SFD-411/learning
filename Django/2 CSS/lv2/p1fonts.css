@@ -1,0 +1,28 @@
+body{
+  font-size: 12px;
+  text-align: center;
+  background: blue;
+  color: white;
+}
+
+h1{
+  font-size: 4em;
+}
+
+p{
+  font-size: 1.5em;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: purple;
+}
+
+#differ{
+  font-size: 2.5em;
+  font-family: monospace;
+}
+
+h3 + #differ{
+  font-size: 2em;
+  font-family: Times New Roman;
+  font-style: italic;
+}

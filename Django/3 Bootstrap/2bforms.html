@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/run/bootstrap/dist/css/bootstrap.css">
+    <title>bootstrap forms (cont.)</title>
+  </head>
+<body>
+  <br>
+  <center><h1>Fake Input Forms!</h1></center>
+  <br>
+  <div class="container">
+    <div class="jumbotron">
+      <h3 class="text-center">Here is a Form! :D Total Legit1</h3>
+      <form>
+        <div class="form-group">
+          <label for="emailex1">Email Address</label>
+          <input type="email" class="form-control" id="emailex1" placeholder="EMail">
+          <small id="emailHelp" class="form-text text-muted">Your information will never be shares.</small>
+        </div>
+
+        <div class="form-group">
+          <label for="selectex1">Drop Down Low!</label>
+          <select class="form-control" name="selectex1">
+            <option>yes</option>
+            <option>yes</option>
+            <option>yes</option>
+            <option>yes</option>
+            <option>yes</option>
+            <option>probably</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="selectex2">Multi-Drop Down Low! <br> <small class"form-text text-muted">[ Use: Control to Select Multiple Items and Shift to Select a Group. - Alternatively, Arrow-Keys and Spaces ]</small></label>
+          <select multiple class="form-control text-center" name="selectex2">
+            <option>yes</option>
+            <option>no</option>
+            <option>no</option>
+            <option>no</option>
+            <option>yes</option>
+            <option>probably</option>
+          </select>
+        </div>
+
+          <div class="form-group">
+            <label for="textex1">Enter some crap:</label>
+            <textarea name="textex1" class="form-control" id="textex1"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="fileex1">Upload a File(Send Nudez)</label>
+            <input type="file" class="form-control-file" id="fileex1">
+            <small id="fileHelp" class="form-text text-muted">This is for uploading files.</small>
+          </div>
+          <br>
+          <fieldset class="form-group">
+            <legend>What you want us to do with yo info?</legend>
+            <div class="form-check">
+              <label for="form-check-label">
+                <input type="radio" class="form-check-input" name="options" id="op1" value="op1">
+                  Read over it carefully, check for errors, and send it back.
+              </label>
+            </div>
+
+            <div class="form-check">
+              <label for="form-check-label">
+                <input type="radio" class="form-check-input" name="options" id="op2" value="op2">
+                  Forget about it! TL;DR.
+             </label>
+            </div>
+
+            <div class="form-check">
+              <label for="form-check-label">
+                <input type="radio" class="form-check-input" name="options" id="op3" value="op3" disabled>
+                  Send 100 Million Dollars back.
+              </label>
+            </div>
+          </fieldset>
+
+          <h4>You are Almost There!</h4>
+          <div class="form-check">
+            <label for="form-check-label">
+              <input type="checkbox" class"form-check-input">
+                Check this box to Check this box.
+            </label>
+          </div>
+          <div class="form-group text-right">
+            <h5>Submit This Ish</h5>
+            <input class="btn btn-outline-secondary" type="submit" value="TAKE THAT!">
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

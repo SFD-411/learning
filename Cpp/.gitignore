@@ -1,0 +1,20 @@
+*.sln
+*.sqlite
+*.db
+*.suo
+*.json
+*.ilk
+*.exe
+*.ipch
+*.user
+*.filters
+*.vcxproj
+*.enc
+*.obj
+*.pdb
+*.idb
+*.tlog
+*.log
+
+side projects/epicfailz/
+*.opendb

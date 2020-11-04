@@ -1,0 +1,22 @@
+*.user
+*.filters
+*.vcxproj
+*.pdb
+*.idb
+*.tlog
+*.lastbuildstate
+*.log
+*.obj
+*.sln
+*.ipch
+*.db
+*.suo
+Debug/
+C5_5.0/.vs/C5_5.0/v15/Browse.VC.opendb
+C5_5.0/C5_5.0/heres a pointer.cpp
+co5/Source - Copy.cpp
+co5/Source.cpp
+*.opendb
+*.json
+*.sqlite
+OneMoreTime/enc_temp_folder/16ead32aed6798caaccc5c2783a7d/NoteTable.cpp

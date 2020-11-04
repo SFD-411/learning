@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>bootstrap grids</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> -->
+  </head>
+  <body>
+    <center>
+      <h1>Bootstrap Grids!</h1>
+    </center>
+
+    <style>
+      .boxy{
+        background: #bd3dff;
+        border: 2px solid black;
+        color: white;
+        text-align: center;
+        padding: 10px;
+      }
+    </style>
+
+    <div class="row">
+      <div class="col-lg-6 boxy">
+        <div class="row">
+          <div class="col-lg-6 boxy">Nest 1</div>
+          <div class="col-lg-6 boxy">Nest 2</div>
+        </div>
+      </div>
+      <div class="col-lg-6 boxy">TOP LEVEL</div>
+    </div>
+<br>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 boxy">
+            Col Large 3
+          </div>
+          <div class="col-lg-3 boxy">
+            Col Large 3
+          </div>
+          <div class="col-lg-3 boxy">
+            Col Large 3
+          </div>
+          <div class="col-lg-3 boxy">
+            Col Large 3
+          </div>
+      </div>
+    </div>
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 boxy">
+          Col Large 3
+        </div>
+        <div class="col-lg-6 boxy">
+          Col Large 6
+        </div>
+        <div class="col-lg-3 boxy">
+          Col Large 3
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 boxy">
+          Col Medium 4
+        </div>
+        <div class="col-md-4 boxy">
+          Col Medium 4
+        </div>
+        <div class="col-md-4 boxy">
+          Col Medium 4
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 boxy">
+          Col Small 6
+        </div>
+        <div class="col-sm-6 boxy">
+          Col Small 6
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-sm-6 boxy">
+          Double Collapse
+          </div>
+          <div class="col-lg-3 col-sm-6 boxy">
+          Double Collapse
+          </div>
+          <div class="col-lg-3 col-sm-6 boxy">
+            Double Collapse
+          </div>
+          <div class="col-lg-3 col-sm-6 boxy">
+            Double Collapse
+          </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-6 boxy">
+          Col Extra-Small 6
+        </div>
+        <div class="col-6 boxy">
+          Col Extra-Small 6
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>

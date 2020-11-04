@@ -1,0 +1,10 @@
+/* some comment */
+/*
+selected tag{
+  property: value;
+} */
+
+h1{ color: rgba(0,0,0,.5); }
+h4{ color: rgb(255, 97, 0);}
+p{font-style: italic; font-family: cursive; color: blue}
+li{ color: #6663cb ;}

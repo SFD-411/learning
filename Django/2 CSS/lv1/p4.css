@@ -1,0 +1,14 @@
+/* general tags have base priority */
+li{
+  color:red;
+}
+
+/* class tags have priority over general */
+.topitems{
+  color:blue;
+}
+
+/* id tags have precidence over class */
+#segundo{
+  border: 1px solid purple
+}
