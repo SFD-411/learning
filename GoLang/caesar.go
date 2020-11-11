@@ -9,7 +9,7 @@ import(
 )
 
 func main(){
-    alpha := []rune("0 1Z2a3Y4b5X6c7W8d9V!e?U/f.T,S=h-R_i)Q(j*P&kO^lN%mM$nL#oK@pJ~qI]rH[sG}tF{uE'vD:wC;xB>yA<z")
+    alpha := []rune("0 1Z2a3Y4b5X6c7W8d9V!e?U/f.Tg,S=h-R_i)Q(j*P&kO^lN%mM$nL#oK@pJ~qI]rH[sG}tF{uE'vD:wC;xB>yA<z")
 
     var input []rune
     var retainer []rune
