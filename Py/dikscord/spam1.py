@@ -9,5 +9,5 @@ sleep(3)
 while True:
     pyautogui.write(spam)
     pyautogui.press('enter')
-    sleep(0.2)
+    sleep(0.7)
 
