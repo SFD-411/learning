@@ -14,26 +14,18 @@ def scanconnect(hostmach, port):
         global nono
     finally:
         suck.close()
-"""    try:
-        suck = socket.socket(socket.AF_INET, socket.SOCK_DGRAM, socket.IPPROTO_UDPLITE)
-        suck.connect((hostmach, port))
-        print('|- %d/udp open' % port)
-    except Exception:
-        global nono
-    finally:
-        suck.close()
-"""
+
 
 def scanport(hostmach, portset):
     try:
         hostip = socket.gethostbyname(hostmach)
     except Exception:
-        print(" ~!~ unresolved ip for %d" % hostmach)
+        print(" ~!~ unresolved ip for %s" % hostmach)
     try:
         hostname = socket.gethostbyaddr(hostip)
-        print("/- Scane Results for " + hostname[0])
+        print("/- Scan Results for " + hostname[0] + " @ " + hostip)
     except Exception:
-        print(" ~!~ unresolved hostname for %d" % hostmach)
+        print(" ~!~ unresolved hostname for %s" % hostmach)
         print("/- Scan Results for " + hostip[0])
     socket.setdefaulttimeout(1)
     for port in portset:
