@@ -2,7 +2,7 @@ from time import sleep
 import pyautogui, os, fileinput, subprocess
 
 #os.seteuid(0)
-spamfile = open("332", 'r')
+spamfile = open("yeye", 'r')
 spam = spamfile.read()
 print("Begin Spam.")
 sleep(3)

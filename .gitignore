@@ -1,1 +1,13 @@
 nodereact/
+OS/source/
+OS/live/opt/
+OS/sfdOS-rs/target/
+Py/dikscord/
+Rust/synthrs/
+.fingerprint/
+target/
+build/
+deps/ 
+incremental/
+musictheory-rs/
+debug/
