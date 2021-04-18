@@ -34,6 +34,14 @@ struct Tone { pc: u8, oct: u8 }
 struct Octave { no: u8 }
 struct Size { w: f32, h: f32 }
 
+impl Octave{
+    pub fn setter(octave: u8) -> Self{
+        Self{
+            no: octave,
+        }
+    }
+}
+
 impl Size {
     pub fn square(x: f32) -> Self {
         Self {
@@ -46,6 +54,7 @@ impl Size {
 fn setup(
     mut command: Commands,
     mut materials: ResMut<Assets<ColorMaterial>>,
+    mut octave: ResMut<Octave>,
 ) {
     // Create 2d Camera
     command.spawn_bundle(OrthographicCameraBundle::new_2d());
@@ -53,6 +62,7 @@ fn setup(
     let pressed_material = materials.add(Color::rgb(0.0, 0.8, 0.2).into());
     let active_material = materials.add(Color::rgb(0.1, 0.2, 0.6).into());
     let dormant_material = materials.add(Color::rgb(0.7, 0.6, 0.5).into());
+    Octave::setter(4);
     command.insert_resource(
         KeyColor {
             pressed: pressed_material.clone(),
@@ -127,7 +137,7 @@ impl ToneTracker {
 
 impl Default for ToneTracker {
     fn default() -> ToneTracker {
-        ToneTracker(4, [false; 144])
+        ToneTracker(Octave.no, [false; 144])
     }
 }
 
@@ -135,10 +145,19 @@ impl Default for ToneTracker {
 fn keyboard_event_system(
     mut keyboard_input_events: EventReader<KeyboardInput>,
     mut tone_tracker: ResMut<ToneTracker>,
+    mut octave: ResMut<Octave>,
 ) {
     for event in keyboard_input_events.iter() {
         match event.key_code {
             // Handle Octaves
+            Some(KeyCode::Up) => {
+                Octave::setter(octave.no + 1);
+                tone_tracker.set_octave(octave.no);
+            }
+            Some(KeyCode::Down) => {
+                Octave::setter(octave.no - 1);
+                tone_tracker.set_octave(octave.no);
+            }
             Some(KeyCode::Grave) => { tone_tracker.set_octave(11); }
             Some(KeyCode::Key1) => { tone_tracker.set_octave(10); }
             Some(KeyCode::Key2) => { tone_tracker.set_octave(9); }
