@@ -31,7 +31,7 @@ struct KeyColor {
 
 #[derive(Default, Copy, Clone, Eq, PartialEq, Hash)]
 struct Tone { pc: u8, oct: u8 }
-struct Octave { no: u8 }
+
 struct Size { w: f32, h: f32 }
 
 impl Size {
@@ -61,7 +61,7 @@ fn setup(
         }
     );
     command.insert_resource(
-        ToneTracker::default()
+        OctaveTracker::default()
     );
     // Create Buttons
     for oct in 0..12 {
@@ -106,28 +106,33 @@ fn position(window: Res<Windows>, mut q: Query<(&Tone, &mut Transform)>) {
     }
 }
 
-pub struct ToneTracker(u8, [bool; 144]);
+pub struct KeyTracker(u8, [bool; 12]);
+pub struct OctaveTracker(u8, [bool; 12]);
 
-impl ToneTracker {
+impl OctaveTracker {
     pub fn get_active_octave(&self) -> u8 {
         self.0
     }
+
     pub fn set_octave(&mut self, octave: u8) {
         assert!(octave <= 11);
         self.0 = octave;
     }
-    pub fn tone_pressed(&self, oct: u8, pc: u8) -> bool {
-        self.1[(oct * 12 + pc) as usize]
+}
+
+impl ToneTracker {
+    pub fn tone_pressed(&self, pc: u8) -> bool {
+        self.1[pc as usize]
     }
     pub fn set_tone_state(&mut self, pc: u8, pressed: bool) {
         assert!(pc <= 11);
-        self.1[(self.0 * 12 + pc) as usize] = pressed;
+        self.1[pc as usize] = pressed;
     }
 }
 
-impl Default for ToneTracker {
-    fn default() -> ToneTracker {
-        ToneTracker(4, [false; 144])
+impl Default for OctaveTracker {
+    fn default() -> OctaveTracker {
+        OctaveTracker(None, [false; 12])
     }
 }
 
@@ -135,22 +140,23 @@ impl Default for ToneTracker {
 fn keyboard_event_system(
     mut keyboard_input_events: EventReader<KeyboardInput>,
     mut tone_tracker: ResMut<ToneTracker>,
+    mut octave_tracker: ResMut<OctaveTracker>,
 ) {
     for event in keyboard_input_events.iter() {
         match event.key_code {
             // Handle Octaves
-            Some(KeyCode::Grave) => { tone_tracker.set_octave(11); }
-            Some(KeyCode::Key1) => { tone_tracker.set_octave(10); }
-            Some(KeyCode::Key2) => { tone_tracker.set_octave(9); }
-            Some(KeyCode::Key3) => { tone_tracker.set_octave(8); }
-            Some(KeyCode::Key4) => { tone_tracker.set_octave(7); }
-            Some(KeyCode::Key5) => { tone_tracker.set_octave(6); }
-            Some(KeyCode::Key6) => { tone_tracker.set_octave(5); }
-            Some(KeyCode::Key7) => { tone_tracker.set_octave(4); }
-            Some(KeyCode::Key8) => { tone_tracker.set_octave(3); }
-            Some(KeyCode::Key9) => { tone_tracker.set_octave(2); }
-            Some(KeyCode::Key0) => { tone_tracker.set_octave(1); }
-            Some(KeyCode::Minus) => { tone_tracker.set_octave(0); }
+            Some(KeyCode::Grave) => { octave_tracker.set_octave(11); }
+            Some(KeyCode::Key1) => { octave_tracker.set_octave(10); }
+            Some(KeyCode::Key2) => { octave_tracker.set_octave(9); }
+            Some(KeyCode::Key3) => { octave_tracker.set_octave(8); }
+            Some(KeyCode::Key4) => { octave_tracker.set_octave(7); }
+            Some(KeyCode::Key5) => { octave_tracker.set_octave(6); }
+            Some(KeyCode::Key6) => { octave_tracker.set_octave(5); }
+            Some(KeyCode::Key7) => { octave_tracker.set_octave(4); }
+            Some(KeyCode::Key8) => { octave_tracker.set_octave(3); }
+            Some(KeyCode::Key9) => { octave_tracker.set_octave(2); }
+            Some(KeyCode::Key0) => { octave_tracker.set_octave(1); }
+            Some(KeyCode::Minus) => { octave_tracker.set_octave(0); }
             Some(KeyCode::A) => { tone_tracker.set_tone_state(0, event.state.is_pressed()) }
             Some(KeyCode::W) => { tone_tracker.set_tone_state(1, event.state.is_pressed()) }
             Some(KeyCode::S) => { tone_tracker.set_tone_state(2, event.state.is_pressed()) }
