@@ -11,12 +11,6 @@ use bevy::{
 const GRID: u32 = 12;
 const SQSIZE: f32 = 0.9;
 
-#[derive(SystemLabel, Debug, Hash, PartialEq, Eq, Clone)]
-pub enum KeyStatus {
-    Active,
-    Dormant,
-}
-
 #[derive(Default)]
 struct Key(Vec<Entity>);
 
